@@ -1,0 +1,26 @@
+{
+  "name": "todo-js",
+  "version": "1.0.0",
+  "description": "A simple todo list project with vanilla js",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SepandJP/todo-js.git"
+  },
+  "keywords": [
+    "todo-list",
+    "vanillaJS"
+  ],
+  "author": "Sepand JamshidPour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SepandJP/todo-js/issues"
+  },
+  "homepage": "https://github.com/SepandJP/todo-js#readme",
+  "devDependencies": {
+    "webpack": "^5.80.0"
+  }
+}
