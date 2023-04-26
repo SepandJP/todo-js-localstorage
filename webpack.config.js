@@ -11,7 +11,12 @@ const stylesHandler = 'style-loader';
 
 
 const config = {
-    entry: ['./src/scripts/createShowTasksDom.js'],
+    entry: [
+        './src/scripts/createDOM.js',
+        './src/scripts/fetchFromFile.js',
+        './src/scripts/insertToFile.js',
+        './src/scripts/main.js'
+        ],
     output: {
         path: path.resolve(__dirname, 'public/scripts'),
     },
