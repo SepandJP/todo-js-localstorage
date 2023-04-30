@@ -2,4 +2,6 @@
  * Recive data from file
  */
 
-console.log('Task')
+export class fetchFromFile{
+    
+}

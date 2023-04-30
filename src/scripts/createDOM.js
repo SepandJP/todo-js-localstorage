@@ -2,4 +2,6 @@
  * Show tasks with DOM
  */
 
-console.log('View')
+export class createDOM {
+
+}
