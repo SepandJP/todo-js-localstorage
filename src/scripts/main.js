@@ -5,9 +5,9 @@ import {insertToFile} from './insertToFile.js'
 let tasksList = []
 
 document.addEventListener('DOMContentLoaded', () => {
-    const Storage = new createDOM
+    const view = new createDOM
     const task = new fetchFromFile
-    const view = new insertToFile
+    const storage = new insertToFile
 
-    task.getTasks().then((data) => console.log(data))
+    task.getTasks().then((data) => view.displayTasks(data))
 })

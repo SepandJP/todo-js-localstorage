@@ -135,3 +135,13 @@ input {
 	font-size: 17px;
 	padding-left: 5px;
 }
+
+.done-item {
+	text-decoration: line-through;
+	color: rgba(0,0,0,.5);
+}
+
+.undone-item {
+	text-decoration: none;
+	color: rgba(0,0,0,1);
+}
