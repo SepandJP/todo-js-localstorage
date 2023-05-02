@@ -11,14 +11,33 @@ export class createDOM {
         const tasksDOM = document.querySelector('#todo-tasks-list')
         let result = ''
         tasks.forEach(item => {
-            // const 
-            result += `
-            <li class="items">
-                <button class="trash-icon">${item.done ? checked : check}</button>
-                <p class="${item.done ? 'done-item' : 'undone-item' }">${item.title}</p>
-                <button>${trash}</button>
-            </li>`
+            tasksDOM.appendChild(this.createTaskDOM(item))
         });
-        tasksDOM.innerHTML = result
+    }
+
+    createTaskDOM(task) {
+        const taskElement = document.createElement('li')
+        const checkTask = document.createElement('button')
+        const taskTitle = document.createElement('p')
+        const trashTask = document.createElement('button')
+
+        taskElement.setAttribute('class', 'items')
+        checkTask.innerHTML = task.done ? checked : check
+        taskTitle.setAttribute('class', `${task.done ? 'done-item' : 'undone-item'}`)
+        taskTitle.textContent = task.title
+        trashTask.innerHTML = trash
+
+        checkTask.addEventListener('click', () => {
+            
+        })
+        trashTask.addEventListener('click', () => {
+            
+        })
+
+        taskElement.appendChild(checkTask)
+        taskElement.appendChild(taskTitle)
+        taskElement.appendChild(trashTask)
+
+        return taskElement
     }
 }
