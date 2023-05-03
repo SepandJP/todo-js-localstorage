@@ -9,10 +9,10 @@ const checked = '<img src="images/checked-icon.svg" alt="uncheck undone task">'
 export class createDOM {
     displayTasks(tasks) {
         const tasksDOM = document.querySelector('#todo-tasks-list')
-        let result = ''
+        tasksDOM.innerHTML = ''
         tasks.forEach(item => {
             tasksDOM.appendChild(this.createTaskDOM(item))
-        });
+        })
     }
 
     createTaskDOM(task) {

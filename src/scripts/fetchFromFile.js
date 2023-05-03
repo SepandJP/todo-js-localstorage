@@ -14,4 +14,13 @@ export class fetchFromFile{
             console.log(error)
         }
     }
+
+    getTasksFromLocalStorage() {
+        const task_json = localStorage.getItem('tasks');
+        try {
+            return task_json !== null ? JSON.parse(task_json) : [];
+        } catch (error) {
+            return [];
+        }
+    }
 }
