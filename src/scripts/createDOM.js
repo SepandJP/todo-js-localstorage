@@ -37,7 +37,8 @@ export class createDOM {
             this.displayTasks(this.fetch.getTasksFromLocalStorage())
         })
         trashTask.addEventListener('click', () => {
-            
+            this.storage.removeTasks(task.id)
+            this.displayTasks(this.fetch.getTasksFromLocalStorage())
         })
 
         taskElement.appendChild(checkTask)
