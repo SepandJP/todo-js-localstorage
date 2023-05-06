@@ -7,6 +7,11 @@ const check = '<img src="images/check-icon.svg" alt="check done task">'
 const checked = '<img src="images/checked-icon.svg" alt="uncheck undone task">'
 
 export class createDOM {
+    constructor(storage, fetch) {
+        this.storage = storage
+        this.fetch = fetch
+    }
+
     displayTasks(tasks) {
         const tasksDOM = document.querySelector('#todo-tasks-list')
         tasksDOM.innerHTML = ''
@@ -28,7 +33,8 @@ export class createDOM {
         trashTask.innerHTML = trash
 
         checkTask.addEventListener('click', () => {
-            
+            this.storage.toggleTasks(task.id)
+            this.displayTasks(this.fetch.getTasksFromLocalStorage())
         })
         trashTask.addEventListener('click', () => {
             

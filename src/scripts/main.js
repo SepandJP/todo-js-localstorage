@@ -3,9 +3,10 @@ import {fetchFromFile} from './fetchFromFile.js'
 import {insertToFile} from './insertToFile.js' 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const view = new createDOM
     const task = new fetchFromFile
-    const storage = new insertToFile
+    const storage = new insertToFile(task)
+    const view = new createDOM(storage, task)
+
     let tasks_list = task.getTasksFromLocalStorage()
 
     // task.getTasks().then((data) => view.displayTasks(data))
