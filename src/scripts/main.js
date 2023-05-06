@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
     view.displayTasks(tasks_list)
 
     document.querySelector('#add-task-form').addEventListener('submit', e => {
-        e.preventDefault()
-        tasks_list.push({
-            id: crypto.randomUUID(),
-            title: e.target.newTaskTitle.value,
-            done: false
-        });
-        storage.saveTasksToLocalStorage(tasks_list)
-        view.displayTasks(tasks_list)
+        e.preventDefault(e)
+        if (e.target.newTaskTitle.value.trim().length > 0) {
+            tasks_list.push({
+                id: crypto.randomUUID(),
+                title: e.target.newTaskTitle.value,
+                done: false
+            });
+            storage.saveTasksToLocalStorage(tasks_list)
+            view.displayTasks(tasks_list)
+        }
         e.target.elements.newTaskTitle.value = ''
     })
 
