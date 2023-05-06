@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let tasks_list = task.getTasksFromLocalStorage()
 
-    // task.getTasks().then((data) => view.displayTasks(data))
     view.displayTasks(tasks_list)
 
     document.querySelector('#add-task-form').addEventListener('submit', e => {
