@@ -2,7 +2,6 @@ import {createDOM} from './createDOM.js'
 import {fetchFromFile} from './fetchFromFile.js'
 import {insertToFile} from './insertToFile.js' 
 
-document.addEventListener('DOMContentLoaded', () => {
     const task = new fetchFromFile
     const storage = new insertToFile(task)
     const view = new createDOM(storage, task)
@@ -13,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#add-task-form').addEventListener('submit', e => {
         e.preventDefault(e)
+        tasks_list = task.getTasksFromLocalStorage()
         if (e.target.newTaskTitle.value.trim().length > 0) {
             tasks_list.push({
                 id: crypto.randomUUID(),
@@ -31,5 +31,3 @@ document.addEventListener('DOMContentLoaded', () => {
             view.displayTasks(tasks_list)
         }
     });
-
-})
